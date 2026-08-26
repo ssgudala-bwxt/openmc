@@ -136,8 +136,8 @@ Position XDGMesh::sample_element(int32_t bin, uint64_t* seed) const
 void XDGMesh::bins_crossed(Position r0, Position r1, const Direction& u,
   vector<int>& bins, vector<double>& lengths) const
 {
-  xdg::Position p0 {r0.x, r0.y, r0.z};
-  xdg::Position p1 {r1.x, r1.y, r1.z};
+  xdg::Position p0 {r0.x / length_multiplier_, r0.y / length_multiplier_, r0.z / length_multiplier_};
+  xdg::Position p1 {r1.x / length_multiplier_, r1.y / length_multiplier_, r1.z / length_multiplier_};
   double inv_length = 1 / (p1 - p0).length();
   auto track_segments = xdg_->segments(p0, p1);
   // remove elements with lengths of zero
