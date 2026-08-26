@@ -792,6 +792,11 @@ public:
     return {upper_right_[0], upper_right_[1], upper_right_[2]};
   }
 
+  void set_length_scaling(double length_multiplier)
+  {
+    set_length_multiplier(length_multiplier);
+  }
+
 protected:
   //! Set the length multiplier to apply to each point in the mesh
   void set_length_multiplier(const double length_multiplier);
